@@ -29,6 +29,14 @@ class DB
         return $stmt->fetchAll();
     }
 
+    public function singleById($table, $class, $id)
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM $table WHERE id = $id");
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $class);
+        return $stmt->fetchAll();
+    }
+
     public function insert($table, $fields)
     {
 

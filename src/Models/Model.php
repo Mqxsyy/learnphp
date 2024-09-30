@@ -14,6 +14,12 @@ class Model
         return $db->all(static::$table, static::class);
     }
 
+    public static function single($id)
+    {   
+        $db = new DB();
+        return $db->singleById(static::$table, static::class, $id);
+    }
+
     public function save()
     {
         $db = new DB();

@@ -12,4 +12,5 @@ Route::post("/form", [PublicController::class, 'Answer']);
 
 Route::get("/admin/posts", [PostsController::class, 'index']);
 Route::get("/admin/posts/create", [PostsController::class, 'create']);
+Route::get('/admin/posts/view', [PostsController::class, 'view']);
 Route::post('/admin/posts', [PostsController::class, 'store']);

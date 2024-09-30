@@ -25,4 +25,16 @@ class PostsController
         $post->save();
         redirect('/admin/posts');
     }
+
+    public function view()
+    {
+        $id = $_GET['id'];
+        $post = Post::single($id);
+        
+        if (sizeof($post) === 0) {
+            echo("Post with id $id does not exist!");
+        } else {
+            view('posts/view', compact('post'));
+        }
+    }
 }
