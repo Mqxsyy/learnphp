@@ -5,15 +5,15 @@
         <tbody>
             <tr>
                 <th scope="row">Id</th>
-                <td><?= $post[0]->id ?></td>
+                <td><?= $post->id ?></td>
             </tr>
             <tr>
                 <th scope="row">Title</th>
-                <td><?= $post[0]->title ?></td>
+                <td><?= $post->title ?></td>
             </tr>
             <tr>
                 <th scope="row">Body</th>
-                <td><?= $post[0]->body ?></td>
+                <td><?= $post->body ?></td>
             </tr>
         </tbody>
     </table>

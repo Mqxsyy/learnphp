@@ -31,10 +31,32 @@ class PostsController
         $id = $_GET['id'];
         $post = Post::single($id);
         
-        if (sizeof($post) === 0) {
-            echo("Post with id $id does not exist!");
-        } else {
+        if ($post) {
             view('posts/view', compact('post'));
+        } else {
+            echo("Post with id $id does not exist!");
         }
+    }
+
+    public function edit()
+    {
+        $post = Post::single($_GET['id']);
+        view('posts/edit', compact('post'));
+    }
+
+    public function update()
+    {
+        $post = Post::single($_GET['id']);
+        $post->title = $_POST['title'];
+        $post->body = $_POST['body'];
+        $post->save();
+        redirect('/admin/posts');
+    }
+
+    public function delete()
+    {
+        $post = Post::single($_GET['id']);
+        $post->delete();
+        redirect('/admin/posts');
     }
 }
