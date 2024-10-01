@@ -202,7 +202,8 @@
                             <path d="M21 21l-5.2-5.2" />
                         </svg>
                     </a>
-                    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="/register">Sign up</a>
+                    <a class="btn btn-sm btn-primary ms-2" href="/login">Login</a>
                 </div>
             </div>
         </header>
